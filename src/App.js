@@ -1,18 +1,25 @@
 import React from "react"
-import PrfoileImage from "./components/profileImage"
-import ProfileDetails from "./components/profileDetails"
-import ContactButtons from "./components/contactButtons"
-import AboutInteresets from "./components/about_Interesets"
-import Footer from "./components/footer"
+import NavBar from "./components/NavBar"
+import Hero from "./components/Hero"
+import Card from "./components/Card"
+import data from "./data"
 
 export default function App() {
+
+    const cards = data.map(item => {
+        return <Card
+            key = {item.id}
+            item={item} //or {...item}
+        ></Card>
+    })
+
     return (
         <div>
-            <PrfoileImage />
-            <ProfileDetails />
-            <ContactButtons />
-            <AboutInteresets />
-            <Footer />
+            <NavBar />
+            <Hero />
+            <section className="cards-list">
+                {cards}
+            </section>
         </div>
     )
 }

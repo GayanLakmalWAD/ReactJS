@@ -1,10 +1,9 @@
 import React from "react"
-import NavBar from "./components/NavBar"
-import Hero from "./components/Hero"
-import Card from "./components/Card"
 import data from "./data"
+import Card from "./components/Card"
+import Navbar from "./components/Navbar"
 
-export default function App() {
+export default function App(){
 
     const cards = data.map(item => {
         return <Card
@@ -15,9 +14,8 @@ export default function App() {
 
     return (
         <div>
-            <NavBar />
-            <Hero />
-            <section className="cards-list">
+            <Navbar />
+            <section className="card--section">
                 {cards}
             </section>
         </div>
